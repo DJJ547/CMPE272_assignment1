@@ -15,9 +15,6 @@ HW #1 - Ansible
 
 ## Install Ansible on Mac:
 ### 1.Install packages below on the Server Machine
-`$ sudo apt get install python yaml`
-`python jinja2 python paramiko python`
-`crypto python keyczar ansible`
+`$ sudo apt get install python yaml python jinja2 python paramiko python crypto python keyczar ansible`
 ### 2.Install packages below on the Client Machines
-`$ sudo apt get install python crypto`
-`python keyczar`
+`$ sudo apt get install python crypto python keyczar`

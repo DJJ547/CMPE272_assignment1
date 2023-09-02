@@ -10,7 +10,7 @@ HW #1 - Ansible
 ### 1.Install WSL:
 [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
-### 2.Install Ansible through WSL(Ubuntu):
+### 2.Install Ansible through WSL:
 [How to install Ansible in Windows 11 WSL Windows Subsystem for Linux - Ansible install](https://www.youtube.com/watch?v=OhCbpGBOACs).
 
 ## Install Ansible on Mac:

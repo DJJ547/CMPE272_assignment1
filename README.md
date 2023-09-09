@@ -13,4 +13,20 @@ HW #1 - Ansible
 
 ### 3. [Ansible Playbook Explained | Ansible Playbook Tutorial | How to Create Ansible Playbook](https://www.youtube.com/watch?v=CXP-5XkBvWI)
 
-
+## Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
+  - One for Ansible server and two for child server
+  - For Application & OS select "Ubuntu"
+  - For Key Pair use "create new key pair" and have the .pem store somewhere for now
+## Go to your Visual Studio Code
+  - click on 'Extension' search for "Remote-SSH" and install it
+  - click on 'Remote Explorer', make sure in the drop down menu 'Remotes(Tunnels/SSH)' is selected
+  - right click 'SSH', select 'open SSH config file'
+  - In pop-out window select 'C:<your_path>\.ssh\config'
+  - In the config file, the format should be:
+    ```linguist
+    Host <the ip address of your AWS ansible server>
+    HostName <whatever name you want to name your host>
+    User <whatever username>
+    IdentityFile <"path to your .pem key file with double quote">
+    ```
+    save it, then you will see the host ip appears

@@ -13,7 +13,7 @@ HW #1 - Ansible
 
 ### 3. [Ansible Playbook Explained | Ansible Playbook Tutorial | How to Create Ansible Playbook](https://www.youtube.com/watch?v=CXP-5XkBvWI)
 
-
+# Step by step guide #
 
 ## Step 1: Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
   - One for Ansible server and two for child server
@@ -48,23 +48,48 @@ HW #1 - Ansible
   ### For ansible server
   - go to Terminal -> new terminal, first update server with this command
     ```linguist
-    sudo apt update
+    sudo apt-get update
+    ```
+  - then update local repo with offical ansible project repo
+    ```linguist
+    sudo apt-add-repository -y ppa:ansible/ansible
+    ```
+  - update again
+    ```linguist
+    sudo apt-get update
+    ```
+  - install ansible
+    ```linguist
+    sudo apt-get install -y ansible
     ```
   - then install python 3 pip with this command
     ```linguist
-    sudo apt install python3-pip
-    ```
-  - then install ansible with this command
-    ```linguist
-    sudo apt install ansible
+    sudo apt install python3-pip -y
     ```
   ### For each child server
   - go to Terminal -> new terminal, first update server with this command
     ```linguist
-    sudo apt update
+    sudo apt-get update
     ```
   - then install python 3 pip with this command
     ```linguist
-    sudo apt install python3-pip
+    sudo apt install python3-pip -y
     ```
-
+## Step 4: Configure SSH keys, generate public key, copy & paste to each server (all three of them)
+  - open command prompt on your local machine enter this command:
+    ```linguist
+    ssh-keygen
+    ```
+  - It will ask you to enter file in which to save the key, remember the path (usually "C:\Users\<your username>/.ssh/id_rsa"), then just hit 'enter', ask you to enter passphrase, just hit "enter", passphrase again, hit "enter"
+  - to copy the public key, cd to the path with your local machine's windows terminal, open the file with this command:
+    ```linguist
+    cat id_rsa.pub
+    ```
+  - copy the whole thing (include the username at the end)
+  - open each of your server with VSC, go to file -> open folder -> enter "/home/ubuntu/.ssh/" -> hit 'ok'
+  - click the authorized_keys on the left to open it
+  - paste your public key copy to the next line
+  - file -> hit 'save'
+## Step 5: Configure Ansible on the ansible server
+  - open your ansible server with VSC
+  - file -> open folder, enter '/etc/ansible/', click 'ok'

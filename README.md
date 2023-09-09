@@ -32,7 +32,7 @@ HW #1 - Ansible
     save it, then you will see the host ip should appear on the left
   - hit F1, type in 'Remore-SSH: Connect to Host' to connect
   - a pop up window with drop down, select 'linux' (then maybe another window asking about key fingerprint, select yes)
-### Step 3: Now that you have a new console of VSC representing the VM
+## Step 3: Now that you have a new console of VSC representing the VM
   - go to Terminal -> new terminal, first update server with this command
     ```linguist
     sudo apt update

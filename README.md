@@ -6,15 +6,11 @@ HW #1 - Ansible
 - Due 9/11 (Sunday) at 11:59PM
 - Submit a Word document via Canvas, with screenshots showing your work, and all ansible code/scripts via github
 
-## Install Ansible on Windows:
-### 1.Install WSL:
-[How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+## Useful YouTube turtorial:
+### 1. [What Is Ansible? | How Ansible Works? | Ansible Playbook Tutorial For Beginners | DevOps|Simplilearn](https://www.youtube.com/watch?v=wgQ3rHFTM4E)
 
-### 2.Install Ansible through WSL:
-[How to install Ansible in Windows 11 WSL Windows Subsystem for Linux - Ansible install](https://www.youtube.com/watch?v=OhCbpGBOACs).
+### 2. [Ansible Installation & Configuration on AWS | Install & Configure Ansible on EC2 | Intellipaat](https://www.youtube.com/watch?v=Km3BCQnV6sw)
 
-## Install Ansible on Mac:
-### 1.Install packages below on the Server Machine
-`$ sudo apt get install python yaml python jinja2 python paramiko python crypto python keyczar ansible`
-### 2.Install packages below on the Client Machines
-`$ sudo apt get install python crypto python keyczar`
+### 3. [Ansible Playbook Explained | Ansible Playbook Tutorial | How to Create Ansible Playbook](https://www.youtube.com/watch?v=CXP-5XkBvWI)
+
+

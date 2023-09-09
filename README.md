@@ -13,11 +13,11 @@ HW #1 - Ansible
 
 ### 3. [Ansible Playbook Explained | Ansible Playbook Tutorial | How to Create Ansible Playbook](https://www.youtube.com/watch?v=CXP-5XkBvWI)
 
-## Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
+## Step 1: Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
   - One for Ansible server and two for child server
   - For Application & OS select "Ubuntu"
   - For Key Pair use "create new key pair" and have the .pem store somewhere for now
-## Go to your Visual Studio Code
+## Step 2: Go to your Visual Studio Code
   - click on 'Extension' search for "Remote-SSH" and install it
   - click on 'Remote Explorer', make sure in the drop down menu 'Remotes(Tunnels/SSH)' is selected
   - right click 'SSH', select 'open SSH config file'
@@ -31,4 +31,18 @@ HW #1 - Ansible
     ```
     save it, then you will see the host ip should appear on the left
   - hit F1, type in 'Remore-SSH: Connect to Host' to connect
-  - a pop up wondow with drop down, select 'linux' (then maybe another window about fingerprint, select yes)
+  - a pop up window with drop down, select 'linux' (then maybe another window asking about key fingerprint, select yes)
+### Step 3: Now that you have a new console of VSC representing the VM
+  - go to Terminal -> new terminal, first update server with this command
+    ```linguist
+    sudo apt update
+    ```
+  - then install python 3 pip with this command
+    ```linguist
+    sudo apt install python3-pip
+    ```
+  - then install ansible with this command
+    ```linguist
+    sudo apt install ansible
+    ```
+    

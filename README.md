@@ -24,9 +24,11 @@ HW #1 - Ansible
   - In pop-out window select 'C:<your_path>\.ssh\config'
   - In the config file, the format should be:
     ```linguist
-    Host <the ip address of your AWS ansible server>
-    HostName <whatever name you want to name your host>
-    User <whatever username>
-    IdentityFile <"path to your .pem key file with double quote">
+    Host <whatever name you want to name your host>
+        HostName <the ip address of your AWS ansible server>
+        User ubuntu
+        IdentityFile <path to your .pem key file, wrap with double quote if any folder or file name in the path contains space, else not>
     ```
-    save it, then you will see the host ip appears
+    save it, then you will see the host ip should appear on the left
+  - hit F1, type in 'Remore-SSH: Connect to Host' to connect
+  - a pop up wondow with drop down, select 'linux' (then maybe another window about fingerprint, select yes)

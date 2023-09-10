@@ -76,20 +76,30 @@ HW #1 - Ansible
     sudo apt install python3-pip -y
     ```
 ## Step 4: Configure SSH keys
-  - open command prompt on your local machine enter this command:
+  - open your ansible server with VSC
+  - terminal -> new terminal, enter
+    ```linguist
+    cd .ssh
+    ```
+  - generate ssh key with this command:
     ```linguist
     ssh-keygen
     ```
-  - It will ask you to enter file in which to save the key, remember the path (usually "C:\Users\<your username>/.ssh/id_rsa"), then just hit 'enter', ask you to enter passphrase, just hit "enter", passphrase again, hit "enter"
-  - to copy the public key, cd to the path with your local machine's windows terminal, open the file with this command:
+  - It will ask you to enter file in which to save the key, remember the path, hit 'enter', ask you to enter passphrase, hit "enter", passphrase again, hit "enter"
+  - to copy the public key, read the file with this command:
     ```linguist
     cat id_rsa.pub
     ```
   - copy the whole thing (include the username at the end)
-  - open each of your server with VSC, go to file -> open folder -> enter "/home/ubuntu/.ssh/" -> hit 'ok'
-  - click the authorized_keys on the left to open it
-  - paste your public key copy to the next line
-  - file -> hit 'save'
+  - open each of your child server with VSC, terminal -> new terminal, enter:
+    ```linguist
+    cd .ssh
+    ```
+  - enter this command to edit the 'authorized_keys' file:
+    ```linguist
+    sudo nano authorized_keys
+    ```
+  - paste the same public key you copied to the next line
+  - press ctrl + X to exit, hit 'Y', then hit 'enter'
 ## Step 5: Configure Ansible on the ansible server
-  - open your ansible server with VSC
-  - file -> open folder, enter '/etc/ansible/', click 'ok'
+  - 

@@ -102,4 +102,22 @@ HW #1 - Ansible
   - paste the same public key you copied to the next line
   - press ctrl + X to exit, hit 'Y', then hit 'enter'
 ## Step 5: Configure Ansible on the ansible server
-  - 
+  - - open your ansible server with VSC
+  - terminal -> new terminal, use 'cd ..' and 'cd <folder name>' to go to your 'ansible' folder
+  - edit the 'hosts' file with this command:
+    ```linguist
+    sudo nano hosts
+    ```
+  - add this block of code to your hosts:
+    ```linguist
+    [production]
+    child1 ansible_ssh_host=<child 1 server ip address>
+    child2 ansible_ssh_host=<child 2 server ip address>
+    ```
+  - press ctrl + X to exit, hit 'Y', then hit 'enter'
+  - now to test the ansible connection, you can enter this command:
+    ```linguist
+    ansible -m ping all
+    ```
+    and you will see both child servers respond with 'pong'
+## Step 6: create ansible playbook

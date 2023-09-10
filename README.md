@@ -18,7 +18,7 @@ HW #1 - Ansible
 ## Step 1: Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
   - One for Ansible server and two for child server
   - For Application & OS select "Ubuntu"
-  - For Key Pair use "create new key pair" and have the .pem store somewhere for now
+  - For Key Pair use "create new key pair" and have the .pem files (total of three) store somewhere for now
 ## Step 2: Go to your Visual Studio Code
   - click on 'Extension' search for "Remote-SSH" and install it
   - click on 'Remote Explorer', make sure in the drop down menu 'Remotes(Tunnels/SSH)' is selected
@@ -75,7 +75,7 @@ HW #1 - Ansible
     ```linguist
     sudo apt install python3-pip -y
     ```
-## Step 4: Configure SSH keys, generate public key, copy & paste to each server (all three of them)
+## Step 4: Configure SSH keys
   - open command prompt on your local machine enter this command:
     ```linguist
     ssh-keygen

@@ -90,7 +90,7 @@ HW #1 - Ansible
     ```linguist
     cat id_rsa.pub
     ```
-  - copy the whole thing (include the username at the end)
+  - copy the whole thing (include two words at the beginning and at the end seperared with space)
   - open each of your child server with VSC, terminal -> new terminal, enter:
     ```linguist
     cd .ssh

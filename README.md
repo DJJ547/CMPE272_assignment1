@@ -18,7 +18,7 @@ HW #1 - Ansible
 ## Step 1: Launch three instances (create three virtual machines) on [AWS EC2]( https://console.aws.amazon.com/ec2/) 
   - One for Ansible server and two for child server
   - For Application & OS select "Ubuntu"
-  - For Key Pair use "create new key pair" and have the .pem files (total of three) store somewhere for now
+  - For Key Pair use "create new key pair" and have the .pem files (only do this once, use this file on all three VMs) store somewhere for now
 ## Step 2: Go to your Visual Studio Code
   - click on 'Extension' search for "Remote-SSH" and install it
   - click on 'Remote Explorer', make sure in the drop down menu 'Remotes(Tunnels/SSH)' is selected
@@ -102,7 +102,7 @@ HW #1 - Ansible
   - paste the same public key you copied to the next line
   - press ctrl + X to exit, hit 'Y', then hit 'enter'
 ## Step 5: Configure Ansible on the ansible server
-  - - open your ansible server with VSC
+  - open your ansible server with VSC
   - terminal -> new terminal, use 'cd ..' and 'cd <folder name>' to go to your 'ansible' folder
   - edit the 'hosts' file with this command:
     ```linguist
@@ -121,3 +121,33 @@ HW #1 - Ansible
     ```
     and you will see both child servers respond with 'pong'
 ## Step 6: create ansible playbook
+  - open your ansible server with VSC
+  - file -> open folder, under your '/home/ubuntu/', hit ok
+  - on the left panel showing all files, create a folder named 'playbooks' to store all your ansible playbooks
+  - place all four playbooks, the 'message_site.conf', and the 'message.html' in this github repo into your 'playbooks' folder
+  - modify line 2 in every playbook, replace the 'node#' after '- hosts: ' with 'child1' or 'child2'
+  - On your amazon EC2 instances page, click on your child server 1, go to 'Security', click on the link below 'Security groups', in the new page select the one and only security group rule, click on 'Edit inbound rules', then click 'Add rule', in the new row created just change the 'port range' to 8080, change 'Source' to 'Anywhere-IPv4', then hit 'Save rules'. Now that you have opened both your child servers port 8080
+## Step 7: run your ansible playbook
+  - open your ansible server with VSC
+  - terminal -> new terminal, go into playbooks folder with:
+    ```linguist
+    cd playbooks
+    ```
+  - run this command to run deploy-node1.yaml:
+    ```linguist
+    ansible-playbook deploy-node1.yaml
+    ```
+  - run this command to run deploy-node2.yaml:
+    ```linguist
+    ansible-playbook deploy-node2.yaml
+    ```
+  - now open your browser and go to <child1's IP address>:8080, you will see message 'Hello World from SJSU-1' displayed, same with child2
+    Now let's undeploy both server
+  - run this command to run undeploy-node1.yaml:
+    ```linguist
+    ansible-playbook undeploy-node1.yaml
+    ```
+  - run this command to run undeploy-node2.yaml:
+    ```linguist
+    ansible-playbook undeploy-node2.yaml
+    ```

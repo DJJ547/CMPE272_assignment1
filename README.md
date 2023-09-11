@@ -146,7 +146,7 @@ HW #1 - Ansible
     ansible-playbook deploy-node2.yaml
     ```
   - now open your browser and go to <child1's IP address>:8080, you will see message 'Hello World from SJSU-1' displayed, same with child2
-    Now let's undeploy both server
+### Now let's undeploy both server
   - run this command to run undeploy-node1.yaml:
     ```linguist
     ansible-playbook undeploy-node1.yaml

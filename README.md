@@ -126,7 +126,7 @@ HW #1 - Ansible
   - on the left panel showing all files, create a folder named 'playbooks' to store all your ansible playbooks
   - create a new file in your 'playbooks' and name it 'message.html', and copy & paste this in it:
     ```linguist
-    <h1>Hello World from SJSU-1</h1>
+    <h1>Hello World from SJSU 1</h1>
     ```
   - place all four playbooks and the 'message_site.conf' in this github repo into your 'playbooks' folder
   - modify line 2 in every playbook, replace the 'node#' after '- hosts: ' with 'child1' or 'child2'

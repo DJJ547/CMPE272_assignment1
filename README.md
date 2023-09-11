@@ -124,7 +124,11 @@ HW #1 - Ansible
   - open your ansible server with VSC
   - file -> open folder, under your '/home/ubuntu/', hit ok
   - on the left panel showing all files, create a folder named 'playbooks' to store all your ansible playbooks
-  - place all four playbooks, the 'message_site.conf', and the 'message.html' in this github repo into your 'playbooks' folder
+  - create a new file in your 'playbooks' and name it 'message.html', and copy & paste this in it:
+    ```linguist
+    <h1>Hello World from SJSU-1</h1>
+    ```
+  - place all four playbooks and the 'message_site.conf' in this github repo into your 'playbooks' folder
   - modify line 2 in every playbook, replace the 'node#' after '- hosts: ' with 'child1' or 'child2'
   - On your amazon EC2 instances page, click on your child server 1, go to 'Security', click on the link below 'Security groups', in the new page select the one and only security group rule, click on 'Edit inbound rules', then click 'Add rule', in the new row created just change the 'port range' to 8080, change 'Source' to 'Anywhere-IPv4', then hit 'Save rules'. Now that you have opened both your child servers port 8080
 ## Step 7: run your ansible playbook

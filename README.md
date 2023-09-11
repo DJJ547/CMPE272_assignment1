@@ -24,7 +24,7 @@ HW #1 - Ansible
   - click on 'Remote Explorer', make sure in the drop down menu 'Remotes(Tunnels/SSH)' is selected
   - right click 'SSH', select 'open SSH config file'
   - In pop-out window select 'C:<your_path>\.ssh\config'
-  - In the config file, the format should be:
+  - In the config file, copy & paste and edit this block of code:
     ```linguist
     Host <whatever name you want to name your ansible server>
         HostName <the ip address of your AWS ansible server>

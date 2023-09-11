@@ -1,0 +1,28 @@
+---
+  - hosts: node2
+    name: deploy all resources from node1
+    become: yes
+    tasks:
+      - name: remove the website directory
+        file:
+          path: /var/www/messagesite
+          state: absent
+      
+      - name: remove the website configuration file "message-site.conf" in apache webserver
+        file:
+          path: /etc/apache2/sites-available/message-site.conf
+          state: absent
+      
+      - name: remove line "listen to port 8080" on apache webserver port configuration file "ports.conf"
+        lineinfile:
+          path: /etc/apache2/ports.conf
+          line: "Listen 8080"
+          state: absent
+      
+      - name: stop apache2 webserver service
+        command:
+          cmd: sudo service apache2 stop
+      
+      - name: remove apache2, uninstall apache2
+        command:
+          cmd: sudo apt-get autoremove

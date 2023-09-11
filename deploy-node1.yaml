@@ -1,0 +1,42 @@
+---
+  - hosts: node1
+    name: deploy webserver to node1
+    become: yes
+    tasks:
+      - name: install Apache webserver
+        apt: name=apache2 state=latest
+
+      - name: add line "listen to port 8080" to apache webserver
+        lineinfile:
+          path: /etc/apache2/ports.conf
+          line: "Listen 8080"
+          state: present
+
+      - name: add a new site configuration "message_site.conf" file to apache webserver
+        ansible.builtin.copy:
+          src:  /home/ubuntu/playbooks/message_site.conf
+          dest: /etc/apache2/sites-available/message-site.conf
+
+      - name: Create the website directory (if it doesn't exist) to hold the html files or website related files
+        ansible.builtin.file:
+          path: /var/www/messagesite
+          state: directory
+
+      - name: Copy the html webpage "message.html" to the website directory
+        ansible.builtin.copy:
+          src:  /home/ubuntu/playbooks/message.html
+          dest: /var/www/messagesite/index.html
+      
+      - name: Ensure Apache service is enabled and running
+        service:
+          name: apache2
+          state: started
+          enabled: yes
+
+      - name: Enable the "message_site.conf" configuration file, so the webpage can run
+        command: 
+          cmd: sudo a2ensite message-site.conf
+      
+      - name: restart apache webserver
+        command: 
+          cmd: sudo systemctl reload apache2
